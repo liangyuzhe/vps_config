@@ -1,1 +1,37 @@
-{"inbounds":[{"port":10086,"protocol":"vmess","settings":{"clients":[{"id":"08921437-08e2-45ba-8e2e-20d22e831847","alterId":0}]},"streamSettings":{"network":"ws","wsSettings":{"path":"/v2ray"}}}],"outbounds":[{"protocol":"freedom"}],"routing":{"domainStrategy":"IPIfNonMatch","rules":[{"ip":["geoip:private"],"outboundTag":"freedom"}]}}
+{
+  "inbounds": [
+    {
+      "port": 10086,
+      "listen": "0.0.0.0",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "08921437-08e2-45ba-8e2e-20d22e831847",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/v2ray"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "ip": ["geoip:private"],
+        "outboundTag": "freedom"
+      }
+    ]
+  }
+}
