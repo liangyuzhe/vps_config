@@ -2,7 +2,6 @@
   "inbounds": [
     {
       "port": 10086,
-      "listen": "0.0.0.0",
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -22,15 +21,19 @@
   ],
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "tag": "freedom"
     }
   ],
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
-        "ip": ["geoip:private"],
-        "outboundTag": "freedom"
+        "type": "field",
+        "outboundTag": "freedom",
+        "ip": [
+          "geoip:private"
+        ]
       }
     ]
   }
