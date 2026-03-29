@@ -2,11 +2,12 @@
   "inbounds": [
     {
       "port": 10086,
+      "listen": "0.0.0.0",
       "protocol": "vmess",
       "settings": {
         "clients": [
           {
-            "id": "08921437-08e2-45ba-8e2e-20d22e831847",
+            "id": "08921437-08e2-49ba-8e2e-20d22e831847",
             "alterId": 0
           }
         ]
@@ -22,6 +23,9 @@
   "outbounds": [
     {
       "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
       "tag": "freedom"
     }
   ],
@@ -30,10 +34,8 @@
     "rules": [
       {
         "type": "field",
-        "outboundTag": "freedom",
-        "ip": [
-          "geoip:private"
-        ]
+        "ip": ["geoip:private"],
+        "outboundTag": "freedom"
       }
     ]
   }
